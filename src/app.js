@@ -19,7 +19,7 @@ window.onload = function() {
   console.log("Hello Rigo from the console!");
   setInterval(() => {
     changeValues(randomSuit());
-  }, 1000 * 5);
+  }, 1000 * 2);
 };
 
 //Here are the functions
@@ -39,8 +39,17 @@ function changeValues(suitValue) {
       icons[iterator].innerHTML = suitValue;
       icons[iterator].classList.replace("text-dark", "text-danger");
     }
-    icons[iterator].innerHTML = suitValue;
-    icons[iterator].classList.replace("text-danger", "text-dark");
-    console.log(suitValue);
+    if (suitValue == "♣") {
+      icons[iterator].innerHTML = suitValue;
+      icons[iterator].classList.replace("text-danger", "text-dark");
+    }
+    if (suitValue == "♠") {
+      icons[iterator].innerHTML = suitValue;
+      icons[iterator].classList.replace("text-dark", "text-danger");
+    }
+    if (suitValue == "♦") {
+      icons[iterator].innerHTML = suitValue;
+      icons[iterator].classList.replace("text-danger", "text-dark");
+    }
   }
 }
