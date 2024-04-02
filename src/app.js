@@ -7,33 +7,50 @@ import "./assets/img/4geeks.ico";
 
 //Here i import global elements
 let icons = document.querySelectorAll(".icons");
-console.log(icons);
-/*for (let i = 0; i < icons.length; i++) {
-  console.log(icons[i].innerHTML);
-  icons[i].innerHTML = "♥";
-}
-*/
+let htmlNum = document.querySelector("#number");
+let button = document.querySelector("#buttonCard");
 
 window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
   setInterval(() => {
     changeValues(randomSuit());
-  }, 1000 * 2);
+    randomNum(htmlNum);
+  }, 1000 * 10);
 };
 
 //Here are the functions
+
+function randomNum(number) {
+  let numArray = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    " Q",
+    " K"
+  ];
+
+  let randoMizer = Math.floor(Math.random() * numArray.length);
+  number.innerHTML = randoMizer;
+
+  return number;
+}
+
 let randomSuit = () => {
   let suitGroup = ["♦", "♥", "♠", "♣"];
-  /*for (let iterator = 0; iterator < suitGroup.length; iterator++) {
-    console.log(suitGroup[iterator]);
-  }*/
   let randomIcon = Math.floor(Math.random() * suitGroup.length);
   let resultIcon = suitGroup[randomIcon];
   return resultIcon;
 };
 
-function changeValues(suitValue) {
+function changeValues(suitValue, numberValue) {
   for (let iterator = 0; iterator < icons.length; iterator++) {
     if (suitValue == "♥" || "♦") {
       icons[iterator].innerHTML = suitValue;
@@ -53,3 +70,8 @@ function changeValues(suitValue) {
     }
   }
 }
+
+button.addEventListener("click", event => {
+  changeValues(randomSuit());
+  randomNum(htmlNum);
+});

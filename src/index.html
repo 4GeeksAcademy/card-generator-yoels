@@ -12,20 +12,23 @@
   </head>
   <body>
     <div class="container-fluid text-center bg-light p-5">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <div
+      <h1 class="mt-5">Random Card</h1>
+        <div
         class="card bg-white border-1 m-auto justify-content-center"
-        style="height: 20rem; width: 15rem; gap: 30%;">
-          <div class="icons text-dark d-flex flex-row justify-content-start" style="margin: 1rem;">
+        style="height: 20rem; width: 15rem; gap: 5px;">
+          <div class="icons text-dark d-flex flex-row justify-content-start fs-1 mt-3" style="margin: 1rem;">
             &spades;
           </div>
-          <div class="card-number d-flex justify-content-center">
+          <div class="card-number d-flex justify-content-center mt-2 mb-2" id="number" style="font-size: 5rem;">
             5
           </div>
-          <div class="icons text-dark d-flex flex-row justify-content-end" style=" margin: 1rem;">
+          <div class="icons text-dark d-flex flex-row justify-content-end fs-1" style=" margin: 1rem;">
             &spades;
           </div>
         </div>
+        <button type="button" id="buttonCard" class="btn btn-dark btn-lg mt-3">
+          Click for random card
+        </button>
       </div>
     </div>
   </body>
